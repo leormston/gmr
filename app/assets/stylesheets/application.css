@@ -1,0 +1,55 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*General Styling */
+
+body {
+  background-color: #eaf6f4;
+}
+
+/*Navbar styling */
+
+.navbar {
+  background-color: #821749;
+}
+
+.navbar a,
+.navbar p {
+  color: #eaf6f4;
+
+}
+.btn-outline-custom {
+  border-color: #eaf6f4;
+  color: white;
+}
+
+.btn-outline-custom:hover {
+  background-color: #9b003c;
+  color: white;
+}
+
+nav .navbar-nav li a{
+  color: white !important;
+  font-weight: 300;
+  }
+
+nav .navbar-nav li a:hover{
+  background-color: #9b003c !important;
+  }
+
+.navbarlogo {
+  height: 50px;
+}
