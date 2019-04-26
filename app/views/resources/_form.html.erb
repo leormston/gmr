@@ -1,0 +1,76 @@
+<%= form_with(model: resource, local: true) do |form| %>
+  <% if resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(resource.errors.count, "error") %> prohibited this resource from being saved:</h2>
+
+      <ul>
+      <% resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: 'forminput' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :topic %>
+        <%= form.text_field :topic %>
+      </div>
+
+      <div class="field">
+        <%= form.label :higher %>
+        <%= form.text_field :higher %>
+      </div>
+
+      <div class="field">
+        <%= form.label :video_one, 'Primary Video' %>
+        <%= form.text_field :video_one, class: 'forminput'  %>
+      </div>
+
+
+      <div class="field">
+        <%= form.label :video_two, 'Secondary Video' %>
+        <%= form.text_field :video_two, class: 'forminput'  %>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="field">
+        <%= form.label :question_id, 'Question Sheet ID' %>
+        <%= form.text_field :question_id, class: 'forminput'  %>
+      </div>
+
+      <div class="field">
+        <%= form.label :answers_id, 'Answer Sheet ID' %>
+        <%= form.text_field :answers_id, class: 'forminput'  %>
+      </div>
+
+      <div class="field">
+        <%= form.label :pp_id, 'Powerpoint ID' %>
+        <%= form.text_field :pp_id, class: 'forminput'  %>
+      </div>
+
+      <div class="field">
+        <%= form.label :cs_w_id, 'Cheatsheet Word ID' %>
+        <%= form.text_field :cs_w_id, class: 'forminput'  %>
+      </div>
+
+      <div class="field">
+        <%= form.label :cs_pdf, 'Cheatsheet PDF ID' %>
+        <%= form.file_field :cs_pdf%>
+      </div>
+
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    </div>
+  </div>
+
+<% end %>
