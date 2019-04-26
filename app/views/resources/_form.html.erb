@@ -21,12 +21,12 @@
 
       <div class="field">
         <%= form.label :topic %>
-        <%= form.text_field :topic %>
+        <%= form.select(:topic, Resource::TOPIC_LIST)%>
       </div>
 
       <div class="field">
-        <%= form.label :higher %>
-        <%= form.text_field :higher %>
+        <%= form.label :higher, "Level" %>
+        <%= form.select(:higher, Resource::LEVEL_LIST) %>
       </div>
 
       <div class="field">
@@ -62,7 +62,7 @@
       </div>
 
       <div class="field">
-        <%= form.label :cs_pdf, 'Cheatsheet PDF ID' %>
+        <%= form.label :cs_pdf, 'Cheatsheet PDF' %>
         <%= form.file_field :cs_pdf%>
       </div>
 
