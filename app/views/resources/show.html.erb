@@ -4,16 +4,26 @@
 <br>
 
 <div class="row">
+
+  <%if @horizontal == true%>
+  <div class="col-12">
+    <style>.youtubevideo {width: 40%; display:inline-block; text-align: center;}
+           .videos {text-align: center;}
+    </style>
+  <%else%>
   <div class="col-sm-6">
+  <%end%>
     <h4>Useful Videos</h4>
     <hr>
-    <%if @resource.video_one.present?%>
-      <iframe class="youtubevideo" src="<%=@resource.video_one%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <%end%>
+    <div class="videos">
+      <%if @resource.video_one.present?%>
+        <iframe class="youtubevideo" src="<%=@resource.video_one%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <%end%>
 
-    <%if @resource.video_two.present?%>
-      <iframe class="youtubevideo" src="<%=@resource.video_two%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <%end%>
+      <%if @resource.video_two.present?%>
+        <iframe class="youtubevideo" src="<%=@resource.video_two%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <%end%>
+    </div>
   </div>
   <div class="col-sm-6 resourcelinkside">
     <h4>Resources</h4>
@@ -77,5 +87,10 @@
     <p class="timestamps"><strong>Last Updated</strong> - <%=@resource.updated_at%></p>
   </div>
 </div>
+
+<%= form_with(url: @resource, method: "get", local: true) do |form| %>
+  <%=form.hidden_field :l, value: 'horizontal'%>
+  <%=form.submit "Flip the switch", class:'layoutbutton btn btn-outline-custom my-sm-0'%>
+<%end%>
 <%= link_to 'Edit', edit_resource_path(@resource) %> |
 <%= link_to 'Back', resources_path %>

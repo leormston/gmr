@@ -1,26 +1,90 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Resources</h1>
+<h1 id="title">Watcha looking for?</h1>
+<p id = "searchbarsubtitle">Search hundreds of maths resources all in one place in seconds... For FREE!</p>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container searchbar">
+  <%= form_with(url: resources_path, method: 'get', local: true, class:'form-inline my-2 my-lg-0') do |form| %>
+    <%= form.text_field :q, id: 'q', value: params[:q], class: 'form-control mr-sm-2 searchfield'%>
+    <%= form.submit 'Search', class: "btn btn-outline-custom my-sm-0",  type:"submit", role:"group" %>
+  <%end%>
+</div>
 
-  <tbody>
-    <% @resources.each do |resource| %>
-      <tr>
-        <td><%= resource.name %></td>
-        <td><%= link_to 'Show', resource %></td>
-        <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
-        <td><%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<div class="row tableheader">
+  <div class="col-4">
+    <p>Resource Name</p>
+  </div>
+  <div class="col-1">
+    <p>Views</p>
+  </div>
+  <div class="col-1">
+    <%=image_tag('pdf_icon.png', class: 'tableicon')%>
+  </div>
+  <div class="col-1">
+    <%=image_tag('word_icon.png', class: 'tableicon')%>
+  </div>
+  <div class="col-1">
+    <%=image_tag('pp_icon.png', class: 'tableicon')%>
+  </div>
+  <div class="col-1">
+    <%=image_tag('qs_icon.png', class: 'tableicon')%>
+  </div>
+  <div class="col-1">
+    <%=image_tag('as_icon.png', class: 'tableicon')%>
+  </div>
+  <div class="col-1">
+    <%=image_tag('admin_icon.png', class: 'tableicon')%>
+  </div>
+  <div class="col-1">
+    <%=image_tag('cog_icon.png', class: 'tableicon')%>
+  </div>
+</div>
+
+<div class="row datarow">
+  <%@resources.each do |resource|%>
+  <div class="col-4">
+    <%= link_to resource.name, resource %>
+  </div>
+  <div class="col-1">
+    <p class="tick">2000</p>
+  </div>
+  <div class="col-1">
+    <%if resource.cs_pdf.attached?%>
+      <p class="tick">✓</p>
+    <%end%>
+  </div>
+  <div class="col-1">
+    <%if resource.cs_word.attached?%>
+      <p class="tick">✓</p>
+    <%end%>
+  </div>
+  <div class="col-1">
+    <%if resource.pp.attached?%>
+      <p class="tick">✓</p>
+    <%end%>
+  </div>
+  <div class="col-1">
+    <%if resource.question_sheet.attached?%>
+      <p class="tick">✓</p>
+    <%end%>
+  </div>
+  <div class="col-1">
+    <%if resource.answer_sheet.attached?%>
+      <p class="tick">✓</p>
+    <%end%>
+  </div>
+  <div class="col-1">
+    <p class="tick">✓</p>
+  </div>
+  <div class="col-1">
+    <p class="tick"><%= link_to 'E', edit_resource_path(resource) %><%= link_to 'D', resource, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  </div>
+  <%end%>
+</div>
+
+
 
 <br>
 
-<%= link_to 'New Resource', new_resource_path %>
+<%= link_to 'New Resource', new_resource_path, class: "btn btn-outline-custom my-sm-0" %>

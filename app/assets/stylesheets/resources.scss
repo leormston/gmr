@@ -44,3 +44,62 @@
   width: 100%;
   height: 300px;
 }
+
+#searchbarsubtitle {
+  text-align: center;
+}
+
+.searchbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 20px;
+}
+
+.searchfield {
+  width: 100%;
+}
+
+.layoutbutton {
+  width: 100%
+}
+
+.tableicon {
+  height: 30px;
+  border-left: solid white 1px;
+  border-right: solid white 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+.tableheader {
+  line-height: 30px;
+  background-color: #821749;
+  border-radius: 10px;
+  color: white;
+  padding-top : 6px;
+}
+
+.tableheader p {
+  padding-top: 5px;
+}
+
+.tick {
+  text-align: center;
+}
+
+.tableheader .col-1 {
+  text-align: center;
+}
+.datarow {
+  display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 35px;
+  transition-duration: 0.5s;
+}
+
+.datarow:hover {
+  background-color: #F8F8F8;
+}

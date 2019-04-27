@@ -4,12 +4,20 @@ class ResourcesController < ApplicationController
   # GET /resources
   # GET /resources.json
   def index
-    @resources = Resource.all
+    if params[:q]
+      search_term = params[:q]
+      @resources = Resource.where("name LIKE ?", "%#{search_term}%")
+    else
+      @resources = Resource.all
+    end
   end
 
   # GET /resources/1
   # GET /resources/1.json
   def show
+    if params[:l]
+      @horizontal = true
+    end
   end
 
   # GET /resources/new

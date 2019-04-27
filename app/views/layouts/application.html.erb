@@ -16,7 +16,7 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light">
-      <%= image_tag('gmr logo.png', class: 'navbarlogo navbar-brand')%>
+      <%= link_to image_tag('gmr logo.png', class: 'navbarlogo navbar-brand'), home_index_path%>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -36,10 +36,11 @@
             <a class="nav-link" href="#">Support</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-custom  my-sm-0" type="submit">Find Topic</button>
-        </form>
+
+        <%= form_with(url: resources_path, method: 'get', local: true, class:'form-inline my-2 my-lg-0') do |form| %>
+          <%= form.text_field :q, id: 'q', value: params[:q], class: 'form-control mr-sm-2'%>
+          <%= form.submit 'Search', class: "btn btn-outline-custom my-sm-0",  type:"submit", role:"group" %>
+        <%end%>
       </div>
     </nav>
     <div class="backdrop">
