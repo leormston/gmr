@@ -69,7 +69,7 @@ class ResourcesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resource_params
-      params.require(:resource).permit(:name, :higher, :topic, :video_one, :video_two, :cs_pdf)
+      params.require(:resource).permit(:name, :higher, :topic, :video_one, :video_two, :cs_pdf, :cs_word, :pp, :question_sheet, :answer_sheet)
     end
 
 end
