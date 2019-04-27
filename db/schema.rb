@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_26_142042) do
+ActiveRecord::Schema.define(version: 2019_04_27_130300) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2019_04_26_142042) do
     t.integer "cs_w_id"
     t.integer "cs_pdf_id"
     t.string "topic"
-    t.boolean "higher"
+    t.string "higher"
   end
 
 end

@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 <%= link_to 'preview pdf', rails_blob_path(@resource.cs_pdf, disposition: 'preview') %>
+<%= @resource.higher%>
 <hr>
 <%= link_to 'Edit', edit_resource_path(@resource) %> |
 <%= link_to 'Back', resources_path %>
