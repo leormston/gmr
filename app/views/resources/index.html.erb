@@ -41,8 +41,9 @@
   </div>
 </div>
 
+<%@resources.each do |resource|%>
 <div class="row datarow">
-  <%@resources.each do |resource|%>
+
   <div class="col-4">
     <%= link_to resource.name, resource %>
   </div>
@@ -80,9 +81,8 @@
   <div class="col-1">
     <p class="tick"><%= link_to 'E', edit_resource_path(resource) %><%= link_to 'D', resource, method: :delete, data: { confirm: 'Are you sure?' } %></p>
   </div>
-  <%end%>
 </div>
-
+<%end%>
 
 
 <br>
