@@ -47,7 +47,7 @@
     <%= link_to resource.name, resource %>
   </div>
   <div class="col-1">
-    <p class="tick">2000</p>
+    <p class="tick"><%=resource.views.to_s%></p>
   </div>
   <div class="col-1">
     <%if resource.cs_pdf.attached?%>
