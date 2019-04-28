@@ -8,7 +8,7 @@ class ResourcesController < ApplicationController
       search_term = params[:q]
       @resources = Resource.where("name LIKE ?", "%#{search_term}%")
     else
-      @resources = Resource.all
+      @resources = Resource.order(:created_at)
     end
   end
 
