@@ -1,3 +1,7 @@
+<%Resource.update_all(easy: 1) %>
+<%Resource.update_all(hard: 1) %>
+<%Resource.update_all(useful: 1) %>
+
 <%@resource.increment!(:views)%>
 <%if params[:r]%>
   <%case params[:r]%>
@@ -10,7 +14,7 @@
   <%end%>
 <%end%>
 <p id="notice"><%= notice %></p>
-<h2 id="title"><%=@resource.easy%></h2>
+<h2 id="title"><%=@resource.name%> <%=@resource.easy%></h2>
 <hr>
 <div class="row">
   <div class="col-12">

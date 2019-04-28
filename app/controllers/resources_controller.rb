@@ -19,9 +19,6 @@ class ResourcesController < ApplicationController
   # GET /resources/1
   # GET /resources/1.json
   def show
-    Resource.all.each { |n| n.update_attribute(:easy, 0) }
-    Resource.all.each { |n| n.update_attribute(:hard, 0) }
-    Resource.all.each { |n| n.update_attribute(:useful, 0) }
     if params[:l]
       @horizontal = true
 
