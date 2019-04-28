@@ -65,3 +65,8 @@ nav .navbar-nav li a:hover{
 .notnav {
   margin: 20px;
 }
+
+.navbuttons {
+  float: left;
+  display: inline;
+}

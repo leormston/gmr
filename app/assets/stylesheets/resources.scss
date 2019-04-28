@@ -136,3 +136,21 @@ select {
 select:hover {
   background-color: #9b003c;
 }
+
+#easy {
+  background-color: #85d884;
+}
+
+#hard {
+  background-color: #b74533;
+}
+
+#useful {
+  background-color: #eda115;
+}
+
+#easy,
+#hard,
+#useful {
+  float: right;
+}

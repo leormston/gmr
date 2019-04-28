@@ -19,8 +19,12 @@ class ResourcesController < ApplicationController
   # GET /resources/1
   # GET /resources/1.json
   def show
+    Resource.all.each { |n| n.update_attribute(:easy, 0) }
+    Resource.all.each { |n| n.update_attribute(:hard, 0) }
+    Resource.all.each { |n| n.update_attribute(:useful, 0) }
     if params[:l]
       @horizontal = true
+
     end
   end
 
@@ -37,6 +41,9 @@ class ResourcesController < ApplicationController
   # POST /resources.json
   def create
     @resource = Resource.new(resource_params)
+    @resource.easy = 0
+    @resource.hard = 0
+    @resource.useful = 0
     respond_to do |format|
       if @resource.save
         format.html { redirect_to @resource, notice: 'Resource was successfully created.' }

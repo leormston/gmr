@@ -1,8 +1,37 @@
 <%@resource.increment!(:views)%>
+<%if params[:r]%>
+  <%case params[:r]%>
+  <%when "easy"%>
+    <%@resource.increment!(:easy)%>
+  <%when "hard"%>
+    <%@resource.increment!(:hard)%>
+  <%when "useful"%>
+    <%@resource.increment!(:useful)%>
+  <%end%>
+<%end%>
 <p id="notice"><%= notice %></p>
-<h2 id="title"><%=@resource.name%></h2>
+<h2 id="title"><%=@resource.easy%></h2>
 <hr>
+<div class="row">
+  <div class="col-12">
+    <%=link_to "Back to topics", resources_path, class:"btn btn-outline-custom my-sm-0 navbuttons"%>
+    <%= form_with(url: @resource, method: "get", local: true) do |form| %>
+      <%=form.hidden_field :r, value: 'easy'%>
+      <%=form.submit "Easy", class:'btn btn-outline-custom my-sm-0 navbuttons', id: "easy"%>
+    <%end%>
+    <%= form_with(url: @resource, method: "get", local: true) do |form| %>
+      <%=form.hidden_field :r, value: 'hard'%>
+      <%=form.submit "Hard", class:'btn btn-outline-custom my-sm-0 navbuttons', id: "hard"%>
+    <%end%>
+    <%= form_with(url: @resource, method: "get", local: true) do |form| %>
+      <%=form.hidden_field :r, value: 'useful'%>
+      <%=form.submit "Useful", class:' btn btn-outline-custom my-sm-0 navbuttons',id: "useful"%>
+    <%end%>
+  </div>
+</div>
 <br>
+<br>
+
 
 <div class="row">
 
@@ -70,6 +99,8 @@
       </div>
       <br>
     <%end%>
+
+
   </div>
 </div>
 
