@@ -1,2 +1,87 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+
+
+<div class="row">
+  <div class="col-sm-4 col-12 ">
+    <div class="frontlist">
+      <div class="frontlistheader">
+        <h5>GMR Students Struggle with</h5>
+      </div>
+      <div class="frontlistcontent">
+        <div class="row tableheadings">
+          <div class="col-8">
+            <p>Resource Name</p>
+          </div>
+          <div class="col-4">
+            <p>Votes</p>
+          </div>
+        </div>
+        <%@resources1.each do |resource|%>
+        <div class="row frontpagedatarow">
+          <div class="col-8">
+            <%=link_to resource.name, resource%>
+          </div>
+          <div class="col-4">
+            <%=resource.hard%>
+          </div>
+        </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 col-12 ">
+    <div class="frontlist">
+      <div class="frontlistheader">
+        <h5>GMR Students find easy</h5>
+      </div>
+      <div class="frontlistcontent">
+        <div class="row tableheadings">
+          <div class="col-8">
+            <p>Resource Name</p>
+          </div>
+          <div class="col-4">
+            <p>Votes</p>
+          </div>
+        </div>
+        <div class="row">
+          <%@resources2.each do |resource|%>
+            <div class="col-8">
+              <%=link_to resource.name, resource%>
+            </div>
+            <div class="col-4">
+              <%=resource.easy%>
+            </div>
+          <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 col-12 ">
+    <div class="frontlist">
+      <div class="frontlistheader">
+        <h5>GMR's best content</h5>
+      </div>
+
+      <div class="frontlistcontent">
+        <div class="row tableheadings">
+          <div class="col-8">
+            <p>Resource Name</p>
+          </div>
+          <div class="col-4">
+            <p>Votes</p>
+          </div>
+        </div>
+        <div>
+        <div class="row">
+          <%@resources3.each do |resource|%>
+            <div class="col-8">
+              <%=link_to resource.name, resource%>
+            </div>
+            <div class="col-4">
+              <%=resource.useful%>
+            </div>
+          <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

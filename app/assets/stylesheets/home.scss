@@ -1,3 +1,32 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.frontlistheader {
+  border: solid #821749 1px;
+  border-radius: 3px;
+  background-color: #821749;
+  color: white;
+  font-size: 1rem;
+  height: 35px;
+  line-height: 35px;
+  padding-top: 3px;
+  text-align: center;
+}
+
+.frontlist {
+  border: solid 2px #821749;
+  border-radius: 3px;
+}
+
+.frontlistcontent {
+  margin: 10px;
+}
+
+.tableheadings {
+  font-weight: 700;
+}
+
+.frontpagedatarow:hover {
+  background-color: #F8F8F8;
+}
