@@ -4,14 +4,15 @@ class ResourcesController < ApplicationController
   # GET /resources
   # GET /resources.json
   def index
+    @resources = Resource.order(:creeated_at)
     if params[:q]
       search_term = params[:q]
-      @resources = Resource.where("name LIKE ?", "%#{search_term}%")
-    elsif
-      @resources = Resource.order(:created_at)
-    elsif params[:higher] != "All"
+      @resources = Resource.where("name LIKE ?", "%#{search_term}%").order(:created_at)
+    end
+    if params[:higher] != "All" then
       @resources = @resources.where(higher: params[:higher])
-    elsif params[:topic] != "All"
+    end
+    if params[:topic] != "All" then
       @resources = @resources.where(topic: params[:topic])
     end
   end
