@@ -42,16 +42,16 @@
             <p>Votes</p>
           </div>
         </div>
+        <%@resources2.each do |resource|%>
         <div class="row frontpagedatarow">
-          <%@resources2.each do |resource|%>
-            <div class="col-8">
-              <%=link_to resource.name, resource%>
-            </div>
-            <div class="col-4">
-              <%=resource.easy%>
-            </div>
-          <%end%>
+          <div class="col-8">
+            <%=link_to resource.name, resource%>
+          </div>
+          <div class="col-4">
+            <%=resource.easy%>
+          </div>
         </div>
+        <%end%>
       </div>
     </div>
   </div>
@@ -70,17 +70,16 @@
             <p>Votes</p>
           </div>
         </div>
-        <div>
+        <%@resources3.each do |resource|%>
         <div class="row frontpagedatarow">
-          <%@resources3.each do |resource|%>
-            <div class="col-8">
-              <%=link_to resource.name, resource%>
-            </div>
-            <div class="col-4">
-              <%=resource.useful%>
-            </div>
-          <%end%>
+          <div class="col-8">
+            <%=link_to resource.name, resource%>
+          </div>
+          <div class="col-4">
+            <%=resource.useful%>
+          </div>
         </div>
+        <%end%>
       </div>
     </div>
   </div>
