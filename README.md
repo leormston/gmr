@@ -1,24 +1,9 @@
-# README
+# Welcome to the world of maths
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The aim of this app is to be an easy to navigate and maintain platform for people involved with the education and learning of mathematics
 
-Things you may want to cover:
+Using ruby on rails we have developed an application which:
 
-* Ruby version
+- Develops and produces resources in many different forms (video, pdf, powerpoint)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Users can upload and share resources
