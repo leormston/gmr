@@ -78,3 +78,43 @@
     display: none;
   }
 }
+
+.content-link-block {
+  background-image: url("button_background-homepage.jpeg");
+  background-size: cover;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 5px;
+
+}
+
+.content-link-block {
+  display: flex;
+  font-size: 1.8rem;
+  color: white;
+  transition-duration: 0.5s;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.content-link-block:hover{
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.content-link-block p:hover {
+  text-decoration: none;
+}
+
+p:hover,
+a:hover {
+  text-decoration: none;
+}
+
+.pad10 {
+  padding-bottom: 30px;
+}

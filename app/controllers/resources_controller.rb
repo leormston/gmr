@@ -17,6 +17,10 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def video
+
+  end
+
   # GET /resources/1
   # GET /resources/1.json
   def show
