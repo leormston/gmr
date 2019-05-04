@@ -8,10 +8,10 @@ class ResourcesController < ApplicationController
       search_term = params[:q]
       @resources = Resource.where("name LIKE ?", "%#{search_term}%").order(:created_at)
     end
-    if params[:higher] == !("All" || "")   then
+    if params[:higher] && params[:higher] != "All"
       @resources = @resources.where(higher: params[:higher])
     end
-    if params[:topic] == !("All" || "") then
+    if (params[:topic] && params[:topic] != "All")
       @resources = @resources.where(topic: params[:topic])
     end
   end
