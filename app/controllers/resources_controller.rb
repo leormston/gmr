@@ -1,18 +1,17 @@
 class ResourcesController < ApplicationController
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
-
   # GET /resources
   # GET /resources.json
   def index
-    @resources = Resource.order(:creeated_at)
+    @resources = Resource.all
     if params[:q]
       search_term = params[:q]
       @resources = Resource.where("name LIKE ?", "%#{search_term}%").order(:created_at)
     end
-    if params[:higher] != "All" then
+    if params[:higher] == !("All" || "")   then
       @resources = @resources.where(higher: params[:higher])
     end
-    if params[:topic] != "All" then
+    if params[:topic] == !("All" || "") then
       @resources = @resources.where(topic: params[:topic])
     end
   end

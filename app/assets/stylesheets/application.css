@@ -70,3 +70,14 @@ nav .navbar-nav li a:hover{
   float: left;
   display: inline;
 }
+
+footer {
+  background-color: #821749;
+  text-align: center;
+  padding: 20px 0px;
+}
+
+footer a,
+footer a:hover {
+  color: white;
+}
