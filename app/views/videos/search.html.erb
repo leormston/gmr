@@ -1,0 +1,45 @@
+
+
+<div class="row videos-row">
+  <div class="col-md-6 col-12">
+    <h1 id="title">Find the perfect video</h1>
+    <p id = "searchbarsubtitle">Lets get browsing...</p>
+
+    <div class="container searchbar">
+      <%= form_with(url: videos_search_path, method: 'get', local: true) do |form| %>
+        <%= form.text_field :q, id: 'q', value: params[:q], class: 'form-control mr-sm-2 searchfield', placeholder: "Search for video"%>
+        <div class="filter">
+          <%= form.select(:higher, Resource::SEARCHLEVEL_LIST) %>
+          <%= form.select(:topic, Resource::SEARCHTOPIC_LIST)%>
+        </div>
+        <%= form.submit 'Search', class: "btn btn-outline-custom searchbutton",  type:"submit", role:"group" %>
+      <%end%>
+    </div>
+    <div class="videoinformation">
+      <p class="noticetitle">Information</p>
+      <hr>
+      <p>If video will not play in fullscreen please right click on the video and click "copy video url". You
+      can paste this link into your preferred browser.</p>
+    </div>
+  </div>
+  <div class="col-md-6 col-12 scroll">
+  <%@resources.each do |resource|%>
+    <%if (resource.video_one || resource.video_two).present?%>
+    <div class="container videorow">
+      <div class="row video-box-container">
+        <div class="col-12 video-box-title"><p><%=resource.name%></p></div>
+        <div class="col-12 video-container">
+          <%if resource.video_one.present?%>
+            <iframe class="youtubevideo" src="<%=resource.video_one%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <%end%>
+          <%if resource.video_two.present?%>
+            <iframe class="youtubevideo" src="<%=resource.video_two%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <%end%>
+        </div>
+      </div>
+    </div>
+    <%end%>
+    <%end%>
+  </div>
+
+</div>

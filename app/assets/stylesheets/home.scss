@@ -118,3 +118,29 @@ a:hover {
 .pad10 {
   padding-bottom: 30px;
 }
+
+.title {
+  text-align: center;
+}
+
+.donatebutton {
+  text-align: center;
+}
+
+.btn-outline-custom {
+  text-align: center;
+}
+
+#send-button {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+
+  .contact_details h5 {
+    font-size: 15px;
+  }
+  .contact_details {
+    padding-top: 30px;
+  }
+}
