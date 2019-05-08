@@ -22,6 +22,12 @@
 
 }
 
+@media (max-width: 768px) {
+  .pc-only {
+    display: none;
+  }
+}
+
 .resourcebutton {
   border: 1px solid black;
   width: 300px;

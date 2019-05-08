@@ -4,6 +4,7 @@ class Resource < ApplicationRecord
   has_one_attached :pp
   has_one_attached :question_sheet
   has_one_attached :answer_sheet
+  belongs_to :user
 
   TOPIC_LIST = ["Number", "Algebra", "Graphs", "Ratio / Proportion / Rate of change", "Geometry and Measures", "Pythagoras and Trigonometry", "Probability and Statistics"]
 

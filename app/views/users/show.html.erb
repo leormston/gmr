@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<h1 id="title">My Account</h1>
+<hr>
+
+
+<div class="row accountinformation">
+  <div class="col-md-4 col-12">
+    <p>
+      First name:
+      <%if @user.first_name.present?%>
+      <p class="accountvariables"><%= @user.first_name %></p>
+      <%end%>
+    </p>
+  </div>
+  <div class="col-md-4 col-12">
+    <p>
+      Last name:
+      <%if @user.last_name.present?%>
+      <p class="accountvariables"><%= @user.last_name %></p>
+      <%end%>
+    </p>
+  </div>
+  <div class="col-md-4 col-12">
+  <p>
+    Alias:
+    <%if @user.alias.present?%>
+    <p class="accountvariables"><%= @user.alias %></p>
+    <%end%>
+  </p>
+  </div>
+  <div class="col-md-4 col-12">
+  <p>
+    Email:
+    <p class="accountvariables"><%= @user.email %></p>
+  </p>
+  </div>
+  <div class="col-md-4 col-12">
+  <p>
+    Moderator Verified?
+    <%if @user.alias.present?%>
+    <p class="accountvariables"><%= @user.alias %></p>
+    <%end%>
+  </p>
+  </div>
+  <div class="col-md-4 col-12">
+  <p>
+    <%= link_to 'Edit Account', edit_user_path(@user), class: "btn btn-outline-custom my-sm-0"%>
+    <%= link_to 'Back', users_path, class: "btn btn-outline-custom my-sm-0" %>
+  </p>
+  </div>
+</div>
+
+|
