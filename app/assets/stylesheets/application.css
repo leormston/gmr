@@ -99,3 +99,19 @@ a:hover {
   color: white;
   background-color: #9b003c !important
 }
+
+.notice {
+  text-align: center;
+  padding-top: 10px;
+  background-color : #821749;
+  color: white;
+  border: solid black 1px;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  height: 40px;
+}
+
+.notice p {
+  color: white;
+  font-size: 1.4rem;
+}

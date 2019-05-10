@@ -12,3 +12,54 @@
   padding: 8px;
   border-radius: 5px;
 }
+
+.popup {
+  background-color: white;
+  border: solid 1px #821749;
+  border-radius: 5px;
+  width: 50%;
+  text-align: center;
+}
+
+.popup-header {
+  background-color: #821749;
+  color: white;
+  font-size: 1.3rem;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.popup-body {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.warning {
+  background-color: lightpink;
+  color: darkred;
+  text-align: center;
+  border: solid 1px darkred;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+#dropdown {
+  position: absolute;
+  top: 200px;
+  width: 100%;
+  left: 25%;
+}
+
+.verified {
+  background-color: lightgreen;
+  color: darkgreen;
+  border: solid darkgreen 1px;
+  border-radius: 5px;
+  text-align: center;
+}

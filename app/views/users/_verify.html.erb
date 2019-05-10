@@ -1,0 +1,15 @@
+<div class="popup">
+  <div class="popup-header">
+    <p>Verify Code</p>
+  </div>
+  <div class="popup-body">
+      <%= form_for @user do |form| %>
+        <%=form.label :user_key, "Enter moderator key:"%>
+        <%=form.password_field :user_key, placeholder: "Enter the moderator key sent by email"%>
+      <%=form.submit "Key", class:'btn btn-outline-custom my-sm-0'%>
+    <%end%>
+    <br>
+    <br>
+    <%=link_to "Close", "#", class: "btn btn-outline-custom my-sm-0", id: "dropdownclose"%>
+  </div>
+</div>

@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1 id="title">My Account</h1>
 <hr>
 
@@ -37,9 +35,12 @@
   </div>
   <div class="col-md-4 col-12">
   <p>
-    Moderator Verified?
-    <%if @user.alias.present?%>
-    <p class="accountvariables"><%= @user.alias %></p>
+    Moderator Status :
+    <%if @user.user_key != @user.securecode%>
+    <p class="accountvariables btn btn-outline-custom my-sm-0 verifybutton">Verify</p>
+    <%end%>
+    <%if @user.user_key == @user.securecode%>
+    <p class="accountvariables verified">VERIFIED</p>
     <%end%>
   </p>
   </div>
@@ -50,5 +51,17 @@
   </p>
   </div>
 </div>
+<%if @user.user_key != @user.securecode%>
+  <div class="warning verifybutton" >
+    <p>You have not yet activated your account to become a moderator. If you do not wish to upload or contribute you do not need to activate your account. Click here if you wish to activate your account</p>
+  </div>
+<%else%>
+  <div class="verified" >
+    <p>You have now registered to be a moderator. You can submit content and help support the GMR page!!!</p>
+  </div>
+<%end%>
+<br>
 
-|
+<div id="dropdown">
+  <%=render "verify"%>
+</div>

@@ -12,5 +12,26 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= jquery
 //= require turbolinks
 //= require_tree .
+
+
+document.addEventListener("turbolinks:load", function() {
+  $('#dropdown').css("display", "none");
+  if($('.notice').text() == ""){
+    $('.notice').css("display", "none");
+  };
+
+  $("#dropdownclose").click(function(event) {
+         event.preventDefault();
+      $('#dropdown').fadeOut("slow");
+});
+
+  $(".verifybutton").click(function(event) {
+         event.preventDefault();
+      $('#dropdown').fadeIn("slow");
+});
+
+  $(".notice").delay(5000).fadeOut('slow');
+});
