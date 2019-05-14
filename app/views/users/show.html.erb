@@ -37,7 +37,7 @@
   <p>
     Moderator Status :
     <%if @user.user_key != @user.securecode%>
-    <p class="accountvariables btn btn-outline-custom my-sm-0 verifybutton">Verify</p>
+    <p class="accountvariables btn btn-outline-custom my-sm-0 verifybutton-moderator">Verify</p>
     <%end%>
     <%if @user.user_key == @user.securecode%>
     <p class="accountvariables verified">VERIFIED</p>
@@ -46,8 +46,20 @@
   </div>
   <div class="col-md-4 col-12">
   <p>
-    <%= link_to 'Edit Account', edit_user_path(@user), class: "btn btn-outline-custom my-sm-0"%>
+    Admin Status :
+    <%if @user.admin.to_s != @user.admin_key.to_s%>
+    <p class="accountvariables btn btn-outline-custom my-sm-0 verifybutton-admin">Verify</p>
+    <%end%>
+    <%if @user.admin.to_s == @user.admin_key.to_s%>
+    <p class="accountvariables verified">VERIFIED</p>
+    <%end%>
+  </p>
+  </div>
+  <div class="col-md-4 col-12">
+  <p>
+    <%= link_to 'Edit Account Details', edit_user_path(@user), class: "btn btn-outline-custom my-sm-0"%>
     <%= link_to 'Back', users_path, class: "btn btn-outline-custom my-sm-0" %>
+    <%= link_to 'Delete Account', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-custom my-sm-0" %>
   </p>
   </div>
 </div>
@@ -62,6 +74,11 @@
 <%end%>
 <br>
 
-<div id="dropdown">
-  <%=render "verify"%>
+<div id="dropdown-moderator">
+  <%=render "verify_moderator"%>
+</div>
+
+
+<div id="dropdown-admin">
+  <%=render "verify_admin"%>
 </div>

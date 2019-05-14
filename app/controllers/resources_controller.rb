@@ -1,5 +1,7 @@
 class ResourcesController < ApplicationController
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authorize_moderator, only: [:new, :create, :edit, :update]
   # GET /resources
   # GET /resources.json
   def index

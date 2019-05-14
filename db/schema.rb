@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_10_211322) do
+ActiveRecord::Schema.define(version: 2019_05_14_183444) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 2019_05_10_211322) do
     t.boolean "moderator", default: false
     t.string "securecode", default: "0.8622433703310294"
     t.string "user_key"
+    t.string "admin", default: ""
+    t.string "admin_key", default: "0.27612225122454703-admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

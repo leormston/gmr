@@ -18,19 +18,26 @@
 
 
 document.addEventListener("turbolinks:load", function() {
-  $('#dropdown').css("display", "none");
+  $('#dropdown-admin').css("display", "none");
+  $('#dropdown-moderator').css("display", "none");
   if($('.notice').text() == ""){
     $('.notice').css("display", "none");
   };
 
   $("#dropdownclose").click(function(event) {
          event.preventDefault();
-      $('#dropdown').fadeOut("slow");
+      $('#dropdown-admin').fadeOut("slow");
+      $('#dropdown-moderator').fadeOut("slow");
 });
 
-  $(".verifybutton").click(function(event) {
+  $(".verifybutton-moderator").click(function(event) {
          event.preventDefault();
-      $('#dropdown').fadeIn("slow");
+      $('#dropdown-moderator').fadeIn("slow");
+});
+
+$(".verifybutton-admin").click(function(event) {
+       event.preventDefault();
+    $('#dropdown-admin').fadeIn("slow");
 });
 
   $(".notice").delay(5000).fadeOut('slow');
