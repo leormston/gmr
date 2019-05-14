@@ -82,3 +82,80 @@
 <div id="dropdown-admin">
   <%=render "verify_admin"%>
 </div>
+
+
+<br>
+<h3>My Resources</h3>
+<hr>
+<div class="row tableheader">
+  <div class="col-10 col-md-4">
+    <p>Resource Name</p>
+  </div>
+  <div class="col-2 col-md-1">
+    <p>Views</p>
+  </div>
+  <div class="col-1 pc-only">
+    <%=image_tag('pdf_icon.png', class: 'tableicon')%>
+  </div>
+  <div class="col-1 pc-only">
+    <%=image_tag('word_icon.png', class: 'tableicon')%>
+  </div>
+  <div class="col-1 pc-only">
+    <%=image_tag('pp_icon.png', class: 'tableicon')%>
+  </div>
+  <div class="col-1 pc-only">
+    <%=image_tag('qs_icon.png', class: 'tableicon')%>
+  </div>
+  <div class="col-1 pc-only">
+    <%=image_tag('as_icon.png', class: 'tableicon')%>
+  </div>
+  <div class="col-1 pc-only">
+    <%=image_tag('admin_icon.png', class: 'tableicon')%>
+  </div>
+  <div class="col-1 pc-only">
+    <%=image_tag('cog_icon.png', class: 'tableicon')%>
+  </div>
+</div>
+
+<%@resources.each do |resource|%>
+<div class="row datarow">
+
+  <div class="col-10 col-md-4">
+    <%= link_to resource.name, resource %>
+  </div>
+  <div class="col-2 col-md-1">
+    <p class="tick"><%=resource.views.to_s%></p>
+  </div>
+  <div class="col-1 pc-only">
+    <%if resource.cs_pdf.attached?%>
+      <p class="tick">✓</p>
+    <%end%>
+  </div>
+  <div class="col-1 pc-only">
+    <%if resource.cs_word.attached?%>
+      <p class="tick">✓</p>
+    <%end%>
+  </div>
+  <div class="col-1 pc-only">
+    <%if resource.pp.attached?%>
+      <p class="tick">✓</p>
+    <%end%>
+  </div>
+  <div class="col-1 pc-only">
+    <%if resource.question_sheet.attached?%>
+      <p class="tick">✓</p>
+    <%end%>
+  </div>
+  <div class="col-1 pc-only">
+    <%if resource.answer_sheet.attached?%>
+      <p class="tick">✓</p>
+    <%end%>
+  </div>
+  <div class="col-1 pc-only">
+    <p class="tick">✓</p>
+  </div>
+  <div class="col-1 pc-only">
+    <p class="tick"><%= link_to 'E', edit_resource_path(resource) %></p>
+  </div>
+</div>
+<%end%>

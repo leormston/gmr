@@ -2,19 +2,20 @@ class ResourcesController < ApplicationController
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :authorize_moderator, only: [:new, :create, :edit, :update]
+  before_action :authorize_admin, only: [:delete]
   # GET /resources
   # GET /resources.json
   def index
-    @resources = Resource.all.order(:created_at)
+    @resources = Resource.where(user_id: 4).order(:created_at)
     if params[:q]
       search_term = params[:q]
-      @resources = Resource.where("name LIKE ?", "%#{search_term}%").order(:created_at)
+      @resources = Resource.where("name LIKE ?", "%#{search_term}%").order(:created_at).where(user_id: "4")
     end
     if params[:higher] && params[:higher] != "All"
-      @resources = @resources.where(higher: params[:higher])
+      @resources = @resources.where(higher: params[:higher]).where(user_id: "4")
     end
     if (params[:topic] && params[:topic] != "All")
-      @resources = @resources.where(topic: params[:topic])
+      @resources = @resources.where(topic: params[:topic]).where(user_id: "4")
     end
   end
 
@@ -29,6 +30,7 @@ class ResourcesController < ApplicationController
       @horizontal = true
 
     end
+    @creator = User.find(@resource.user_id)
   end
 
   # GET /resources/new
@@ -47,6 +49,7 @@ class ResourcesController < ApplicationController
     @resource.easy = 0
     @resource.hard = 0
     @resource.useful = 0
+    @resource.user_id = current_user.id
     respond_to do |format|
       if @resource.save
         format.html { redirect_to @resource, notice: 'Resource was successfully created.' }
