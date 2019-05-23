@@ -82,10 +82,12 @@
   <div class="col-1 pc-only">
     <p class="tick">✓</p>
   </div>
-  <%if current_user.admin == current_user.admin_key%>
-    <div class="col-1 pc-only">
-      <p class="tick"><%= link_to 'E', edit_resource_path(resource) %><%= link_to 'D', resource, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    </div>
+  <%if user_signed_in?%>
+    <%if current_user.admin == current_user.admin_key%>
+      <div class="col-1 pc-only">
+        <p class="tick"><%= link_to 'E', edit_resource_path(resource) %><%= link_to 'D', resource, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+    <%end%>
   <%end%>
 </div>
 <%end%>
