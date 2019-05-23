@@ -38,10 +38,12 @@
   <div class="col-1 pc-only">
     <%=image_tag('admin_icon.png', class: 'tableicon')%>
   </div>
-  <%if current_user.admin == current_user.admin_key%>
-    <div class="col-1 pc-only">
-      <%=image_tag('cog_icon.png', class: 'tableicon')%>
-    </div>
+  <%if user_signed_in?%>
+    <%if current_user.admin == current_user.admin_key%>
+      <div class="col-1 pc-only">
+        <%=image_tag('cog_icon.png', class: 'tableicon')%>
+      </div>
+    <%end%>
   <%end%>
 </div>
 
